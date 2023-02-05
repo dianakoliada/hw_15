@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work 15</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body id="body">
+    <div>
+        <input type="text" id="typeText" class="wrap">
+        <div>
+            <input type="radio" id="statusChoice1" name="status" value="alive">
+            <label for="statusChoice1">Alive</label>
+            <input type="radio" id="statusChoice2" name="status" value="dead">
+            <label for="statusChoice2">Dead</label>
+            <input type="radio" id="statusChoice3" name="status" value="unknown">
+            <label for="statusChoice3">Unknown</label>
+        </div>
+        <button id="button">Go</button>
+    </div>
+    <div id="wrapper"></div>
+    <div class="img-wrap visibility" id="img_wrap" onclick="handleCardSelected (event)">
+        <button id="btn_close">Close</button>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
