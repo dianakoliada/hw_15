@@ -24,8 +24,12 @@ async function getCharData () {
         const data = await resp.json();
 
         data.results.forEach(element => {
-            if (element.name == inputText.value) {
-                divWrapper.innerHTML = `<div class="wrap"> <p class="hero_id"> id: ${element.id} </p> <p class="hero_name"> name: ${element.name} </p> <p class="hero_status"> status: ${element.status} </p> </div>`;
+            // (element.name == inputText.value)
+            if (element.name !== null && selectedRadio !== null) {
+
+                divWrapper.insertAdjacentHTML('beforeend', `<div class="wrap"><p class ="hero_id">${element.id}</p><p class ="hero_name">${element.name}</p><p class ="hero_status">${element.status}</p></div>`)
+                // divWrapper.innerHTML = `<div class="wrap"> <p class="hero_id"> id: ${element.id} </p> <p class="hero_name"> name: ${element.name} </p> <p class="hero_status"> status: ${element.status} </p> </div>`;
+
                 imgWrap.insertAdjacentHTML('afterbegin', `<p class="hero_name"> name: ${element.name} </p> <img src="${element.image}" alt="character" id="img">`);
             }
         })
@@ -39,18 +43,17 @@ btn.addEventListener('click', () => {
 });
 
 divWrapper.addEventListener('click', (event) => {
-    imgWrap.classList.remove('visibility');
+    imgWrap.style.display = 'block';
     event.stopPropagation();
 });
 
 btnClose.addEventListener('click', (event) => {
-    imgWrap.classList.add('visibility');
+    imgWrap.style.display = 'none';
     event.stopPropagation();
-    // imgWrap.innerHTML = divWrapper.childElementCount - 1;
 });
 
 body.addEventListener('click', () => {
-    imgWrap.classList.add('visibility');
+    imgWrap.style.display = 'none';
 });
 
 

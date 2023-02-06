@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -10,15 +12,30 @@ body {
     position: relative;
 }
 
-.wrap {
+.wrapper {
+    width: 30%;
+    display: flex;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrap,
+.text {
     border: 2px solid #2c3e50;
     border-radius: 6px;
     line-height: 25px;
-    width: 20%;
+    width: 80%;
     margin: 10px auto;
     background-color: #ebf2fa;
     text-align: center;
     font-size: 18px;
+}
+
+.text {
+    width: 25%;
+    padding: 2px;
 }
 
 .wrap:hover {
@@ -30,6 +47,7 @@ body {
 .hero_status {
     font-size: 24px;
     color: #1b2733;
+    line-height: 30px;
 }
 
 label {
@@ -43,7 +61,7 @@ label {
     display: inline-block;
     font-size: 20px;
     color: #d42121;
-    margin: 20px;
+    margin: 20px auto;
 }
 
 button {
@@ -72,7 +90,8 @@ button:hover {
 }
 
 .visibility {
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden;  */
 }
 
 #img {
